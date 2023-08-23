@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <changeSet id="20230823-1" author="fisher">
+    <changeSet id="init" author="fisher">
         <sql>
         <![CDATA[
             create table districts
@@ -20,7 +20,7 @@
             <![CDATA[
             create table regions
             (
-                id   bigint not null auto_increment,
+                id   bigint not null,
                 name varchar(255),
                 district_id bigint,
                 primary key (id),
@@ -34,10 +34,10 @@
             <![CDATA[
             create table budgets
             (
-                amount    decimal(38, 2),
-                year      integer not null,
+                id        bigint  not null auto_increment,
                 region_id bigint,
-                id        bigint  not null,
+                year      integer not null,
+                amount    decimal(38, 2),
                 primary key (id),
                 foreign key (region_id) references regions (id)
             );
