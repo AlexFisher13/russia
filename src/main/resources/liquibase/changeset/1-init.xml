@@ -37,7 +37,8 @@
                 id        bigint  not null auto_increment,
                 region_id bigint,
                 year      integer not null,
-                amount    decimal(38, 2),
+                income    decimal(38, 2),
+                spending   decimal(38, 2),
                 primary key (id),
                 foreign key (region_id) references regions (id)
             );

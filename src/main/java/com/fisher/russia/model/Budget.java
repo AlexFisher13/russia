@@ -17,5 +17,6 @@ public class Budget {
     @JoinColumn(name = "region_id")
     Region region;
     int year;
-    BigDecimal amount;
+    BigDecimal income;
+    BigDecimal spending;
 }
