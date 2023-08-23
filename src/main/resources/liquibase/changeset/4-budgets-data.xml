@@ -3,11 +3,11 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <changeSet id="20230823-3" author="fisher" runOnChange="true">
+    <changeSet id="20230823-6" author="fisher" runOnChange="true">
         <sql>
             <![CDATA[
-            INSERT INTO regions (id, name) VALUES (1, 'Москва');
-            INSERT INTO regions (id, name) VALUES (2, 'Московская область');
+            INSERT INTO budgets (id, region_id, year, amount) VALUES (1, 1, 2023, 1000000.00);
+            INSERT INTO budgets (id, region_id, year, amount) VALUES (2, 2, 2023, 950000.50);
             ]]>
         </sql>
     </changeSet>

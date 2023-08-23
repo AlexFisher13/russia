@@ -4,7 +4,8 @@
 
     <!-- relativeToChangelogFile - путь относительно мастер файла -->
     <include file="changeset/1-init.xml" relativeToChangelogFile="true"/>
-    <include file="changeset/2-regions.xml" relativeToChangelogFile="true"/>
-    <include file="changeset/3-budgets.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/2-districts-data.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/3-regions-data.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/4-budgets-data.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

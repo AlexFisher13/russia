@@ -5,25 +5,39 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet id="20230823-1" author="fisher">
         <sql>
+        <![CDATA[
+            create table districts
+            (
+                id   bigint not null,
+                name varchar(255),
+                primary key (id)
+            )
+            ]]>
+    </sql>
+    </changeSet>
+    <changeSet id="20230823-2" author="fisher">
+        <sql>
             <![CDATA[
             create table regions
             (
                 id   bigint not null,
                 name varchar(255),
-                primary key (id)
+                district_id bigint,
+                primary key (id),
+                foreign key (district_id) references districts (id)
             );
             ]]>
         </sql>
     </changeSet>
-    <changeSet id="20230823-2" author="fisher">
+    <changeSet id="20230823-3" author="fisher">
         <sql>
             <![CDATA[
             create table budgets
             (
-                amount  decimal(38, 2),
-                year    integer not null,
+                amount    decimal(38, 2),
+                year      integer not null,
                 region_id bigint,
-                id      bigint  not null,
+                id        bigint  not null,
                 primary key (id),
                 foreign key (region_id) references regions (id)
             );

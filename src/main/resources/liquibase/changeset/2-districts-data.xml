@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="20230823-4" author="fisher" runOnChange="true">
+        <sql>
+            <![CDATA[
+            INSERT INTO districts (id, name) VALUES (1, 'Центральный');
+            INSERT INTO districts (id, name) VALUES (2, 'Северо-Западный');
+            INSERT INTO districts (id, name) VALUES (3, 'Южный');
+            INSERT INTO districts (id, name) VALUES (4, 'Приволжский');
+            INSERT INTO districts (id, name) VALUES (5, 'Уральский');
+            INSERT INTO districts (id, name) VALUES (6, 'Сибирский');
+            INSERT INTO districts (id, name) VALUES (7, 'Дальневосточный');
+            INSERT INTO districts (id, name) VALUES (8, 'Северо-Кавказский');
+            ]]>
+        </sql>
+    </changeSet>
+</databaseChangeLog>
