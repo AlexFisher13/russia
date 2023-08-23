@@ -6,10 +6,10 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-@Entity(name = "cities")
+@Entity(name = "regions")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class City {
+public class Region {
     @Id
     Long id;
     String name;

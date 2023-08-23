@@ -14,8 +14,8 @@ public class Budget {
     @Id
     Long id;
     @ManyToOne
-    @JoinColumn(name = "city_id")
-    City city;
+    @JoinColumn(name = "region_id")
+    Region region;
     int year;
     BigDecimal amount;
 }

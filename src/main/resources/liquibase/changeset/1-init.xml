@@ -6,7 +6,7 @@
     <changeSet id="20230823-1" author="fisher">
         <sql>
             <![CDATA[
-            create table cities
+            create table regions
             (
                 id   bigint not null,
                 name varchar(255),
@@ -22,10 +22,10 @@
             (
                 amount  decimal(38, 2),
                 year    integer not null,
-                city_id bigint,
+                region_id bigint,
                 id      bigint  not null,
                 primary key (id),
-                foreign key (city_id) references cities (id)
+                foreign key (region_id) references regions (id)
             );
             ]]>
         </sql>
