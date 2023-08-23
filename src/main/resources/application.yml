@@ -6,7 +6,10 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
   sql:
     init:
       mode: always
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/db.changelog-master.xml

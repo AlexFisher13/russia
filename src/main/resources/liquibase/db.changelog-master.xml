@@ -1,0 +1,9 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!-- relativeToChangelogFile - путь относительно мастер файла -->
+    <include file="changeset/1-init.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/2-add-data.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

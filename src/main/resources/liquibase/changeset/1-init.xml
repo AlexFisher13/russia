@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="20230823-1" author="fisher">
+        <sql>
+            <![CDATA[
+            create table cities
+            (
+                id   bigint not null,
+                name varchar(255),
+                primary key (id)
+            );
+            ]]>
+        </sql>
+    </changeSet>
+    <changeSet id="20230823-2" author="fisher">
+        <sql>
+            <![CDATA[
+            create table budgets
+            (
+                amount  decimal(38, 2),
+                year    integer not null,
+                city_id bigint,
+                id      bigint  not null,
+                primary key (id),
+                foreign key (city_id) references cities (id)
+            );
+            ]]>
+        </sql>
+    </changeSet>
+</databaseChangeLog>
