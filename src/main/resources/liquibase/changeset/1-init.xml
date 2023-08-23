@@ -20,8 +20,8 @@
             <![CDATA[
             create table regions
             (
-                id   bigint not null,
-                name varchar(255),
+                id          bigint not null,
+                name        varchar(255),
                 district_id bigint,
                 primary key (id),
                 foreign key (district_id) references districts (id)

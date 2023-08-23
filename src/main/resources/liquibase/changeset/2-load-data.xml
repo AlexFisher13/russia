@@ -4,29 +4,20 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet id="districts" author="fisher" runOnChange="true">
-        <loadData
-                file="liquibase/data/districts.csv"
-                separator=","
-                tableName="districts">
+        <loadData file="liquibase/data/districts.csv" separator="," tableName="districts">
             <column name="id" type="NUMERIC"/>
             <column name="name" type="VARCHAR"/>
         </loadData>
     </changeSet>
     <changeSet id="regions" author="fisher" runOnChange="true">
-        <loadData
-                file="liquibase/data/regions.csv"
-                separator=","
-                tableName="regions">
+        <loadData file="liquibase/data/regions.csv" separator="," tableName="regions">
             <column name="id" type="NUMERIC"/>
             <column name="name" type="VARCHAR"/>
             <column name="district_id" type="NUMERIC"/>
         </loadData>
     </changeSet>
     <changeSet id="budgets" author="fisher">
-        <loadData
-                file="liquibase/data/budgets.csv"
-                separator=","
-                tableName="budgets">
+        <loadData file="liquibase/data/budgets.csv" separator="," tableName="budgets">
             <column name="region_id" type="NUMERIC"/>
             <column name="year" type="NUMERIC"/>
             <column name="amount" type="NUMERIC"/>
