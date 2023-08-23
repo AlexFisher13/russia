@@ -13,7 +13,6 @@
             INSERT INTO districts (id, name) VALUES (5, 'Уральский');
             INSERT INTO districts (id, name) VALUES (6, 'Сибирский');
             INSERT INTO districts (id, name) VALUES (7, 'Дальневосточный');
-            INSERT INTO districts (id, name) VALUES (8, 'Северо-Кавказский');
             ]]>
         </sql>
     </changeSet>

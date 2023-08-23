@@ -20,7 +20,7 @@
             <![CDATA[
             create table regions
             (
-                id   bigint not null,
+                id   bigint not null auto_increment,
                 name varchar(255),
                 district_id bigint,
                 primary key (id),
