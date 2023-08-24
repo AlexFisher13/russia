@@ -10,7 +10,7 @@
         </loadData>
     </changeSet>
     <changeSet id="regions" author="fisher" runOnChange="true">
-        <loadData file="liquibase/data/regions.csv" separator="," tableName="regions">
+        <loadData file="liquibase/data/regions.csv" separator=";" tableName="regions">
             <column name="id" type="NUMERIC"/>
             <column name="name" type="VARCHAR"/>
             <column name="district_id" type="NUMERIC"/>
