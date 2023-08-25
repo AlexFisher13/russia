@@ -17,10 +17,11 @@
         </loadData>
     </changeSet>
     <changeSet id="budgets" author="fisher">
-        <loadData file="liquibase/data/budgets.csv" separator="," tableName="budgets">
+        <loadData file="liquibase/data/budgets.csv" separator=";" tableName="budgets">
             <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
             <column name="year" type="NUMERIC"/>
-            <column name="amount" type="NUMERIC"/>
         </loadData>
     </changeSet>
 </databaseChangeLog>
