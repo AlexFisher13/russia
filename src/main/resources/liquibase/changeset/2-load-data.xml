@@ -16,8 +16,64 @@
             <column name="district_id" type="NUMERIC"/>
         </loadData>
     </changeSet>
-    <changeSet id="budgets" author="fisher">
-        <loadData file="liquibase/data/budgets.csv" separator=";" tableName="budgets">
+    <changeSet id="budgets-2015" author="fisher">
+        <loadData file="liquibase/data/budgets/2015.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2016" author="fisher">
+        <loadData file="liquibase/data/budgets/2016.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2017" author="fisher">
+        <loadData file="liquibase/data/budgets/2017.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2018" author="fisher">
+        <loadData file="liquibase/data/budgets/2018.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2019" author="fisher">
+        <loadData file="liquibase/data/budgets/2019.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2020" author="fisher">
+        <loadData file="liquibase/data/budgets/2020.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2021" author="fisher">
+        <loadData file="liquibase/data/budgets/2021.csv" separator=";" tableName="budgets">
+            <column name="region_id" type="NUMERIC"/>
+            <column name="income" type="NUMERIC"/>
+            <column name="spending" type="NUMERIC"/>
+            <column name="year" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="budgets-2022" author="fisher">
+        <loadData file="liquibase/data/budgets/2022.csv" separator=";" tableName="budgets">
             <column name="region_id" type="NUMERIC"/>
             <column name="income" type="NUMERIC"/>
             <column name="spending" type="NUMERIC"/>
