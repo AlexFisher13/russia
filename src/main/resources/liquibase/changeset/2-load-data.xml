@@ -80,4 +80,11 @@
             <column name="year" type="NUMERIC"/>
         </loadData>
     </changeSet>
+    <changeSet id="population-2022" author="fisher">
+        <loadData file="liquibase/data/population.csv" separator=";" tableName="population">
+            <column name="id" type="NUMERIC"/>
+            <column name="region_id" type="NUMERIC"/>
+            <column name="count" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
 </databaseChangeLog>

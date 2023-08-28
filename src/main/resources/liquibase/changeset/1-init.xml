@@ -45,4 +45,18 @@
             ]]>
         </sql>
     </changeSet>
+    <changeSet id="20230827-1" author="fisher">
+        <sql>
+            <![CDATA[
+            create table population
+            (
+                id        bigint  not null auto_increment,
+                region_id bigint,
+                count     integer,
+                primary key (id),
+                foreign key (region_id) references regions (id)
+            );
+            ]]>
+        </sql>
+    </changeSet>
 </databaseChangeLog>
