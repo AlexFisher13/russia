@@ -1,20 +1,19 @@
 package com.fisher.russia.model;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @Entity(name = "districts")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class District {
     @Id
+    @JsonIgnore
     Long id;
     String name;
-    @OneToMany
-    @JoinColumn(name = "region_id")
-    List<Region> regions;
 }

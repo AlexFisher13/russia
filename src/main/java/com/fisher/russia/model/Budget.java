@@ -1,5 +1,6 @@
 package com.fisher.russia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -12,9 +13,9 @@ import java.math.BigDecimal;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Budget {
     @Id
+    @JsonIgnore
     Long id;
-    @ManyToOne
-    @JoinColumn(name = "region_id")
+    @OneToOne
     Region region;
     int year;
     BigDecimal income;
