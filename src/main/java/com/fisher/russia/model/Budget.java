@@ -15,7 +15,8 @@ public class Budget {
     @Id
     @JsonIgnore
     Long id;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "region_id", referencedColumnName = "id")
     Region region;
     int year;
     BigDecimal income;

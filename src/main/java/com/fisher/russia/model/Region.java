@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity(name = "regions")
@@ -17,4 +19,6 @@ public class Region {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     District district;
+    @OneToMany(mappedBy = "region", fetch = FetchType.EAGER)
+    List<Budget> budgets;
 }
