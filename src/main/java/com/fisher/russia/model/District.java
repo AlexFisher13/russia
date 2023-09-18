@@ -1,19 +1,24 @@
 package com.fisher.russia.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
+@Getter
+@Setter
 @Entity(name = "districts")
-@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class District {
     @Id
     @JsonIgnore
     Long id;
     String name;
+    @OneToMany(mappedBy = "district", fetch = FetchType.EAGER)
+    List<Region> regions;
 }
