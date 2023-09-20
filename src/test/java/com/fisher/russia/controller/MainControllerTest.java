@@ -22,6 +22,12 @@ class MainControllerTest {
     MainService service;
 
     @Test
+    void getDistr() {
+        controller.getDistricts();
+    }
+
+
+    @Test
     void getDistricts() {
         IntSummaryStatistics regionCounts = controller.getDistricts().stream()
                 .map(d -> d.getRegions().size())

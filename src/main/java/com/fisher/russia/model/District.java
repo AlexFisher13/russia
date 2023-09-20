@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.jpa.repository.EntityGraph;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Setter
 @Entity(name = "districts")
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@NamedEntityGraph(name = "graph-1", attributeNodes = @NamedAttributeNode("regions"))
 public class District {
     @Id
     @JsonIgnore
