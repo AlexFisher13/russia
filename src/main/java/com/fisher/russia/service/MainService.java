@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Scanner;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +28,13 @@ public class MainService {
 
     public List<Region> getRegions() {
         return regionDao.findAll();
+    }
+
+    public void saveBudget(Budget budget) {
+        budgetDao.save(budget);
+    }
+
+    public void saveRegion(Region region) {
+        regionDao.save(region);
     }
 }

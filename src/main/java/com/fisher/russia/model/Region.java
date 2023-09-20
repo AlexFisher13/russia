@@ -19,6 +19,6 @@ public class Region {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     District district;
-    @OneToMany(mappedBy = "region", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "region", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     List<Budget> budgets;
 }
