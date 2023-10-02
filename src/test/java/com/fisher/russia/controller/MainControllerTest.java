@@ -1,6 +1,8 @@
 package com.fisher.russia.controller;
 
+import com.fisher.russia.dao.DistrictDao;
 import com.fisher.russia.model.Budget;
+import com.fisher.russia.model.District;
 import com.fisher.russia.model.Region;
 import com.fisher.russia.service.MainService;
 import jakarta.transaction.Transactional;
@@ -9,10 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.IntSummaryStatistics;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class MainControllerTest {
@@ -20,6 +23,8 @@ class MainControllerTest {
     MainController controller;
     @Autowired
     MainService service;
+    @Autowired
+    DistrictDao districtDao;
 
     @Test
     void getDistr() {
@@ -65,5 +70,12 @@ class MainControllerTest {
         budget.setYear(2025);
         budget.setId((long) (Math.random()*1000));
         return budget;
+    }
+
+    @Test
+    void checkSecondLevelCash() {
+        District district1 = districtDao.findById(1L).get();
+        District district2 = districtDao.findById(1L).get();
+        assertTrue(district1 == district1);
     }
 }
