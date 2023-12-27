@@ -34,7 +34,7 @@
             <![CDATA[
             create table budgets
             (
-                id        bigint  not null auto_increment,
+                id        bigserial  not null,
                 region_id bigint,
                 year      integer not null,
                 income    decimal(38, 2),
@@ -50,7 +50,7 @@
             <![CDATA[
             create table population
             (
-                id        bigint  not null auto_increment,
+                id        bigserial  not null,
                 region_id bigint,
                 count     integer,
                 primary key (id),
