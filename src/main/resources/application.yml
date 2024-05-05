@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/rusdb
-    username: admin
-    password: admin
+    username: postgres
+    password: 123
   jpa:
     show-sql: true
     hibernate:

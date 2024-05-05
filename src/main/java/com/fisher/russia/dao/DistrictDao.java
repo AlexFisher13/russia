@@ -8,11 +8,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DistrictDao extends JpaRepository<District, Long> {
-    @Override
-    @EntityGraph("graph-1")
-    List<District> findAll();
-
-    @Override
-    @EntityGraph("no-regions")
-    Optional<District> findById(Long aLong);
 }

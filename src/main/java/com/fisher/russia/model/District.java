@@ -1,14 +1,17 @@
 package com.fisher.russia.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -16,14 +19,13 @@ import java.util.List;
 @Setter
 @Entity(name = "districts")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@NamedEntityGraph(name = "graph-1", attributeNodes = @NamedAttributeNode("regions"))
-@NamedEntityGraph(name = "no-regions")
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class District {
     @Id
     @JsonIgnore
     Long id;
     String name;
-    @OneToMany(mappedBy = "district", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "district", fetch = FetchType.LAZY)
+    @JsonBackReference
     List<Region> regions;
 }

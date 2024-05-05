@@ -1,8 +1,11 @@
 package com.fisher.russia.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.List;
@@ -16,9 +19,11 @@ public class Region {
     @JsonIgnore
     Long id;
     String name;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "district_id", referencedColumnName = "id")
+    @JsonManagedReference
     District district;
-    @OneToMany(mappedBy = "region", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "region")
     List<Budget> budgets;
 }

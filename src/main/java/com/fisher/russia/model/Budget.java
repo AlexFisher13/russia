@@ -1,5 +1,6 @@
 package com.fisher.russia.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,6 +16,7 @@ public class Budget {
     @Id
     @JsonIgnore
     Long id;
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "region_id", referencedColumnName = "id")
     Region region;

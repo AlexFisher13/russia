@@ -12,28 +12,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @RestController
 @RequiredArgsConstructor
 public class MainController {
     private final MainService mainService;
 
-    @GetMapping("/budgets")
-    public List<Budget> getBudgets() {
-        return mainService.getBudgets();
-    }
-
     @GetMapping("/districts")
-    public List<District> getDistricts() {
-        return mainService.getDistricts();
+    public List<String> getDistricts() {
+        return mainService.getDistricts().stream()
+                .map(District::getName)
+                .collect(toList());
     }
 
     @GetMapping("/regions")
-    public List<Region> getRegions() {
-        return mainService.getRegions();
-    }
-
-    @PostMapping("/budgets")
-    public void setBudget(@RequestBody Budget budget) {
-        mainService.saveBudget(budget);
+    public List<String> getRegions() {
+        return mainService.getRegions().stream()
+                .map(Region::getName)
+                .collect(toList());
     }
 }
